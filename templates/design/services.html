@@ -1,0 +1,151 @@
+{% extends "main/layout.html" %}
+{% load static %}
+
+{% block maincontent %}
+
+<header id="about-header">
+    <nav class="navbar navbar-expand-lg d-flex mb-5 " id="navbar1">
+        <a class="navbar-brand ms-3" href="index.html" id="logo">KOPPEE</a>
+        <img src="https://www.icegif.com/wp-content/uploads/2023/06/icegif-1076.gif" alt="" width="60px">
+        <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <ul class="navbar-nav ms-auto d-flex me-5" id="nav-list1">
+                    <ul class="navbar-nav ms-auto d-flex me-5" id="nav-list1">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/service">Service</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/menu">Menu</a>
+                        </li>
+                        <li class="nav-item">
+                            <div class="dropdown ">
+                                <button class="btn btn-secondary dropdown-toggle m-2" type="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Pages
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/reservation">Reservation</a></li>
+                                    <li><a class="dropdown-item" href="/testimonial">Testimonial</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/contact">Contact</a>
+                        </li>
+    
+                    </ul>
+            </div>
+        </div>
+    </nav>
+
+    
+
+    <div class="d-flex justify-content-center align-items-center flex-column pb-5">
+        <h1 class="fs-1 mb-3"> SERVICES</h1>
+        <small class="mb-5">
+            <a href="/">Home / </a>
+            <a href="/service">Service</a>
+        </small>
+    </div>
+</header>
+
+<main class="py-5">
+    <div class="container py-5" id="container-2">
+        <h3 class="text-center">OUR SERVICES</h3>
+        <h1 class="text-center">Fresh & Organic Beans</h1>
+
+
+        <div class="service-box d-flex flex-wrap justify-content-evenly mt-5">
+
+            {% for item in services %}
+              
+            
+
+            <div class="box rounded col-md-5 d-flex align-items-center">
+                <div class="img-box me-4 col-md-4">
+                    <img src="{{item.image}}" alt="" height="100%" width="100%" class="img-fluid rounded">
+                </div>
+                <div class="img-details">
+                    <div class="heading-details d-flex align-items-center mb-1">
+                        <div class="icon-box rounded-circle align-items-center justify-content-center d-flex me-3">
+                            <i class="{{item.iconlink}} fs-4"></i>
+                        </div>
+                        <h4>{{item.name}}</h4>
+                    </div>
+
+
+                    <p class=" text-secondary fw-light">{{item.description}}</p>
+                </div>
+            </div>
+            {% endfor %}
+            <!-- <div class="box col-md-5 d-flex">
+                <div class="img-box me-4 col-md-4">
+                    <img src="./images/service-2.jpg" alt="" height="100%" width="100%" class="img-fluid">
+                </div>
+                <div class="img-details">
+                    <div class="heading-details d-flex align-items-center mb-3">
+                        <div class="icon-box rounded-circle align-items-center justify-content-center d-flex me-3">
+                            <i class="bi bi-cup-hot-fill fs-4"></i>
+                        </div>
+                        <h4>Fresh Coffe Beans</h4>
+                    </div>
+                    <p class="fs-6 fw-light">Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem
+                        dolor sed est sit
+                        invidunt,
+                        dolore tempor diam ipsum takima erat tempor</p>
+                </div>
+            </div>
+
+            <div class="box col-md-5 d-flex mt-5">
+                <div class="img-box col-md-4 me-4">
+                    <img src="./images/service-3.jpg" alt="" height="100%" width="100%" class="img-fluid">
+                </div>
+                <div class="img-details">
+                    <div class="heading-details d-flex align-items-center mb-3">
+                        <div class="icon-box rounded-circle align-items-center justify-content-center d-flex me-3">
+                            <i class='bx bx-medal fs-3'></i>
+                        </div>
+                        <h4>Best Quality Coffee</h4>
+                    </div>
+                    <p class="fs-6 fw-light">Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem
+                        dolor sed est sit
+                        invidunt,
+                        dolore tempor diam ipsum takima erat tempor</p>
+                </div>
+            </div>
+
+            <div class="box col-md-5 d-flex mt-5">
+                <div class="img-box col-md-4 me-4">
+                    <img src="./images/service-4.jpg" alt="" height="100%" width="100%" class="img-fluid">
+                </div>
+                <div class="img-details">
+                    <div class="heading-details d-flex align-items-center mb-3">
+                        <div class="icon-box rounded-circle align-items-center justify-content-center d-flex me-3">
+                            <i class="bi bi-calendar2 fs-4"></i>
+                        </div>
+                        <h4>Online Table Booking</h4>
+                    </div>
+                    <p class="fs-6 fw-light">Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem
+                        dolor sed est sit
+                        invidunt,
+                        dolore tempor diam ipsum takima erat tempor</p>
+                </div>
+            </div> -->
+
+        </div>
+
+
+    </div>
+</main>
+{% endblock  %}

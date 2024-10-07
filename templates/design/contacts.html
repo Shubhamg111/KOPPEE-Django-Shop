@@ -1,0 +1,100 @@
+{% extends "main/layout.html" %}
+{% load static %}
+
+{% block maincontent %}
+
+<header id="about-header">
+    <nav class="navbar navbar-expand-lg d-flex mb-5 " id="navbar1">
+        <a class="navbar-brand ms-3" href="/" id="logo">KOPPEE</a>
+        <img src="https://www.icegif.com/wp-content/uploads/2023/06/icegif-1076.gif" alt="" width="60px">
+        <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <ul class="navbar-nav ms-auto d-flex me-5" id="nav-list1">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/service">Service</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/menu">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <div class="dropdown ">
+                            <button class="btn btn-secondary dropdown-toggle m-2" type="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Pages
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="/reservation">Reservation</a></li>
+                                <li><a class="dropdown-item" href="/testimonial">Testimonial</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/contact">Contact</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    
+
+   
+</header>
+
+<main class="py-5">
+    <div class="container mb-5" id="container-contact">
+        <h3 class="text-center fs-4">CONTACT US</h3>
+        <h1 class="text-center fs-1 mb-5">Feel Free To Contact</h1>
+        <div class="item d-md-flex justify-content-evenly mb-3">
+            <div class="items text-center">
+                <i class="bi bi-geo-alt-fill fs-3"></i>
+                <h2>Address</h2>
+                <p>{{setting.location}} </p>
+            </div>
+            <div class="items text-center">
+                <i class="bi bi-telephone-fill fs-3"></i>
+                <h2>Phone</h2>
+                <p>{{setting.phone}}</p>
+            </div>
+            <div class="items text-center">
+                <i class="bi bi-envelope-fill fs-3"></i>
+                <h2>Email</h2>
+                <p>{{setting.email}}</p>
+            </div>
+        </div>
+
+        <div class="d-flex flex-lg-row flex-md-column container-md flex-wrap col-12 justify-content-md-evenly ">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3533.2428074981426!2d85.32867567418164!3d27.678889426748423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb197dc1858317%3A0x66c1d87713aef527!2sSankhamul%20Park!5e0!3m2!1sen!2snp!4v1728037489936!5m2!1sen!2snp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            
+            <form action="" class="col-md-5 col-12 my-4">
+                <input type="text" placeholder="Your Name" class="mb-3 p-2 form-control">
+                <input type="email" placeholder="Your Email" class="mb-3 p-2 form-control">
+                <input type="text" placeholder="Subject" class="mb-3 p-2 form-control">
+                <textarea name="" id="" cols="" rows="8" placeholder="Your Message"
+                    class="mb-3 p-2 form-control"></textarea>
+                <button class="mb-3 p-2 w-100 rounded-3">Send Message</button>
+            </form>
+        </div>
+
+
+
+    </div>
+
+</main>
+
+
+
+
+{% endblock  %}

@@ -1,0 +1,264 @@
+{% extends "main/layout.html" %}
+{% load static %}
+{% block maincontent %}
+{% include "components/mainheader.html" %}
+
+<main class="pb-5">
+    <div class="container py-5 aboutus" id="container-1">
+        <h3 class="text-center">ABOUT US</h2>
+            <h1 class="text-center mb-5">Serving Since 1950</h1>
+
+            <div
+                class=" d-lg-flex d-md-flex flex-lg-row flex-md-column justify-content-md-between align-items-md-center justify-content-lg-evenly flex-wrap mt-4 mx-5 ">
+                <div class="box col-md-8 col-lg-3 mt-5">
+                    <h2>Our Story</h1>
+                        <p class="fs-5">Eos kasd eos dolor vero vero, lorem stet diam rebum. Ipsum amet
+                            sed
+                            vero dolor sea</p>
+                        <p class=" fw-light fs-6">Takimata sed vero vero no sit sed, justo clita duo no duo amet et,
+                            nonumy
+                            kasd sed dolor
+                            eos diam lorem eirmod. Amet sit amet amet no. Est nonumy sed labore eirmod sit
+                            magna.
+                            Erat at est justo sit ut. Labor diam sed ipsum et eirmod
+                        </p>
+                        <button class="btn bg-dark text-light w-50 px-0">Learn More</button>
+                </div>
+
+                <div class="box col-lg-5 col-md-9">
+                    <img class="img-fluid" src="{% static 'images/cup.png' %}" alt="cup" height="100%" width="100%">
+                </div>
+
+                <div class="box col-lg-4 col-md-8  mt-5" id="box3">
+                    <h2>Our Vision</h2>
+                    <p class="fw-light fs-6">Invidunt lorem justo sanctus clita. Erat lorem labore ea, justo dolor
+                        lorem ipsum ut sed
+                        eos,
+                        ipsum et dolor kasd sit ea justo. Erat justo sed sed diam.
+                    </p>
+                    <p class="fs-5" id="vision"><i class="bi bi-check2 fs-4 "></i> Lorem ipsum dolor sit amet</p>
+                    <p class="fs-5" id="vision"><i class="bi bi-check2 fs-4 "></i> Lorem ipsum dolor sit amet</p>
+                    <p class="fs-5" id="vision"><i class="bi bi-check2 fs-4 "></i> Lorem ipsum dolor sit amet</p>
+
+                    <button class="btn w-50 px-0">Learn More</button>
+
+
+                </div>
+            </div>
+
+
+    </div>
+
+    <div class="container py-5 services" id="container-2">
+        <h3 class="text-center">OUR SERVICES</h3>
+        <h1 class="text-center">Fresh & Organic Beans</h1>
+
+
+        <div class="service-box d-flex flex-wrap justify-content-evenly mt-5">
+
+            {% for item in services %}
+              
+            
+
+            <div class="box col-md-5 d-flex align-items-center">
+                <div class="img-box me-4 col-md-4">
+                    <img src="{{item.image}}" alt="" height="100%" width="100%" class="img-fluid">
+                </div>
+                <div class="img-details">
+                    <div class="heading-details d-flex align-items-center mb-1">
+                        <div class="icon-box rounded-circle align-items-center justify-content-center d-flex me-3">
+                            <i class="{{item.iconlink}} fs-4"></i>
+                        </div>
+                        <h4>{{item.name}}</h4>
+                    </div>
+
+
+                    <p class=" text-secondary fw-light">{{item.description}}</p>
+                </div>
+            </div>
+            {% endfor %}
+            <!-- <div class="box col-md-5 d-flex">
+                <div class="img-box me-4 col-md-4">
+                    <img src="./images/service-2.jpg" alt="" height="100%" width="100%" class="img-fluid">
+                </div>
+                <div class="img-details">
+                    <div class="heading-details d-flex align-items-center mb-3">
+                        <div class="icon-box rounded-circle align-items-center justify-content-center d-flex me-3">
+                            <i class="bi bi-cup-hot-fill fs-4"></i>
+                        </div>
+                        <h4>Fresh Coffe Beans</h4>
+                    </div>
+                    <p class="fs-6 fw-light">Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem
+                        dolor sed est sit
+                        invidunt,
+                        dolore tempor diam ipsum takima erat tempor</p>
+                </div>
+            </div>
+
+            <div class="box col-md-5 d-flex mt-5">
+                <div class="img-box col-md-4 me-4">
+                    <img src="./images/service-3.jpg" alt="" height="100%" width="100%" class="img-fluid">
+                </div>
+                <div class="img-details">
+                    <div class="heading-details d-flex align-items-center mb-3">
+                        <div class="icon-box rounded-circle align-items-center justify-content-center d-flex me-3">
+                            <i class='bx bx-medal fs-3'></i>
+                        </div>
+                        <h4>Best Quality Coffee</h4>
+                    </div>
+                    <p class="fs-6 fw-light">Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem
+                        dolor sed est sit
+                        invidunt,
+                        dolore tempor diam ipsum takima erat tempor</p>
+                </div>
+            </div>
+
+            <div class="box col-md-5 d-flex mt-5">
+                <div class="img-box col-md-4 me-4">
+                    <img src="./images/service-4.jpg" alt="" height="100%" width="100%" class="img-fluid">
+                </div>
+                <div class="img-details">
+                    <div class="heading-details d-flex align-items-center mb-3">
+                        <div class="icon-box rounded-circle align-items-center justify-content-center d-flex me-3">
+                            <i class="bi bi-calendar2 fs-4"></i>
+                        </div>
+                        <h4>Online Table Booking</h4>
+                    </div>
+                    <p class="fs-6 fw-light">Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem
+                        dolor sed est sit
+                        invidunt,
+                        dolore tempor diam ipsum takima erat tempor</p>
+                </div>
+            </div> -->
+
+        </div>
+
+    </div>
+
+    <div class="register my-5 discount-box d-flex flex-column justify-content-center align-items-center">
+        <h1 class="fs-md-1">50% OFF</h1>
+        <h2 class="fs-md-3 text-center">Sunday Special Offer</h2>
+        <h3 class="fs-md-6 text-center my-3">only for Sunday from 1st January to 30th January 2045</h3>
+        <div class="email-input d-flex mt-4">
+            <input type="email" name="email" id="email" placeholder="Your Email">
+            <button>Sign Up</button>
+        </div>
+
+
+    </div>
+
+    <div class="container menu" id="container-3">
+        <h3 class="text-center fs-3">MENU & PRICING</h3>
+        <h1 class="text-center fs-1">Competitive Pricing</h1>
+
+        <div class="menu-types d-flex flex-wrap justify-content-evenly">
+            <div class="hot-coffee col-lg-5 col-md-10">
+                <h2 class="fs-2 my-5">Hot Coffee</h2>
+                <div class="items">
+                    {% for item in menu.hot %}
+                      
+                   
+                    <div class="box d-flex align-items-center mb-5">
+                        <div class="img-price position-relative col-lg-3 me-5">
+                            <img src="{{item.image}}" alt="{{item.name}}" class="rounded-circle me-5 img-fluid" width="100%"
+                                height="100%">
+                            <span
+                                class="position-absolute p-3 rounded-circle bottom-50 start-100 translate-middle badge text-dark fs-5">
+                                ${{item.price}}
+                            </span>
+                        </div>
+
+
+                        <div class="img-details">
+                            <h4>{{item.name}}</h4>
+                            <p>{{item.description}}</p>
+                        </div>
+
+
+                    </div>
+                    {% endfor %}
+                    
+                </div>
+
+            </div>
+            <div class="cold-coffee col-md-8 col-lg-5">
+                <h2 class="fs-2 my-5">Cold Coffee</h2>
+
+                <div class="items">
+                    {% for item in menu.cold %}
+                      
+                  
+                    <div class="box d-flex align-items-center mb-5">
+                        <div class="img-price position-relative col-lg-3 me-5">
+                            <img src="{{item.image}}" alt="{{item.name}}" class="rounded-circle me-5 img-fluid" width="100%"
+                                height="100%">
+                            <span
+                                class="position-absolute p-3 rounded-circle bottom-50 start-100 translate-middle badge text-dark fs-5">
+                                ${{item.price}}
+                            </span>
+                        </div>
+                        <div class="img-details">
+                            <h4>{{item.name}}</h4>
+                            <p>{{item.description}}</p>
+                        </div>
+
+                    </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="py-5 container reservation " id="container-4">
+        <div class="d-flex justify-content-md-evenly flex-wrap align-items-center">
+            <div class="online-reservation col col-md-4">
+                <h1 class="fs-md-1">30% OFF</h1>
+                <h2 class="fs-md-3">For Online Reservation</h2>
+                <p class="fs-md-6 fw-light">Lorem justo clita erat lorem labore ea, justo dolor lorem ipsum ut sed
+                    eos, ipsum et dolor kasd
+                    sit ea justo. Erat justo sed sed diam. Ea et erat ut sed diam sea</p>
+                <p class="fs-md-5" id="vision"><i class="bi bi-check2 fs-4 "></i> Lorem ipsum dolor sit amet</p>
+                <p class="fs-md-5" id="vision"><i class="bi bi-check2 fs-4 "></i> Lorem ipsum dolor sit amet</p>
+                <p class="fs-md-5" id="vision"><i class="bi bi-check2 fs-4 "></i> Lorem ipsum dolor sit amet</p>
+            </div>
+
+            <div class="book-table col col-md-4">
+                <h2 class="text-center fs-md-3">Book Your Table</h2>
+
+                <p class="text-center"><a href="/reservation" class="btn shadow btn-lg reserve">Now</a></p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="container mt-5 testimonials" id="container-5">
+        <h3 class="text-center fs-md-3">TESTIMONIAL</h3>
+        <h1 class="text-center fs-md-1 mb-5 ">Our Clients Say</h1>
+
+        <div class="owl-carousel owl-theme px-5">
+            {% for item in clients %}
+              
+          
+            <div class="col-lg-9">
+                <div class="d-flex col-lg-7 mb-3 " >
+                    <img src="{{item.image}}" alt="testimonial-1" class="me-3 img-fluid">
+                    <div>
+                        <h4 class="fs-4">{{item.name}}</h4>
+                        <span class="fs-6 fw-light">{{item.profession}}</span>
+                    </div>
+                </div>
+
+                <p class="fs-6 fw-light">{{item.message}}</p>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</main>
+
+
+  
+{% endblock %}

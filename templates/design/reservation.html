@@ -1,0 +1,119 @@
+{% extends "main/layout.html" %}
+{% load static %}
+
+{% block maincontent %}
+
+<header id="about-header">
+    <nav class="navbar navbar-expand-lg d-flex mb-5 " id="navbar1">
+        <a class="navbar-brand ms-3" href="/" id="logo">KOPPEE</a>
+        <img src="https://www.icegif.com/wp-content/uploads/2023/06/icegif-1076.gif" alt="" width="60px">
+        <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <ul class="navbar-nav ms-auto d-flex me-5" id="nav-list1">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/service">Service</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/menu">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <div class="dropdown ">
+                            <button class="btn btn-secondary dropdown-toggle m-2" type="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Pages
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="/reservation">Reservation</a></li>
+                                <li><a class="dropdown-item" href="/testimonial">Testimonial</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/contact">Contact</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    
+
+    <div class="d-flex justify-content-center align-items-center flex-column pb-5">
+        <h1 class="fs-1 mb-3">RESERVATIONS</h1>
+        <small class="mb-5">
+            <a href="./">Home / </a>
+            <a href="./reservation">Reservation</a>
+        </small>
+    </div>
+</header>
+
+<main class="py-5">
+    <div class="py-5 container " id="container-4">
+        <div class="d-flex justify-content-md-evenly flex-wrap align-items-center">
+            <div class="online-reservation col col-md-4">
+                <h1 class="fs-md-1">30% OFF</h1>
+                <h2 class="fs-md-3">For Online Reservation</h2>
+                <p class="fs-md-6 fw-light">Lorem justo clita erat lorem labore ea, justo dolor lorem ipsum ut sed
+                    eos, ipsum et dolor kasd
+                    sit ea justo. Erat justo sed sed diam. Ea et erat ut sed diam sea</p>
+                <p class="fs-md-5" id="vision"><i class="bi bi-check2 fs-4 "></i> Lorem ipsum dolor sit amet</p>
+                <p class="fs-md-5" id="vision"><i class="bi bi-check2 fs-4 "></i> Lorem ipsum dolor sit amet</p>
+                <p class="fs-md-5" id="vision"><i class="bi bi-check2 fs-4 "></i> Lorem ipsum dolor sit amet</p>
+            </div>
+
+            <div class="book-table col col-md-4">
+                <h2 class="text-center fs-md-3">Book Your Table</h2>
+                <!-- <form action="" method="post">
+                    {% csrf_token %}
+                    <input class="form-control" type="text" name="name" id="name" placeholder="Name" required><br>
+                    <input class="form-control" type="email" name="email" id="email" placeholder="Email" required><br>
+                    <input class="form-control" type="tel" name="phone" id="phone" placeholder="Contact Number" required><br>
+                    <input class="form-control" type="date" name="date" id="date" placeholder="" required><br>
+                    <input class="form-control" type="time" name="time" id="time" placeholder="" required><br>   
+                    <select name="person" class="form-select" aria-label="Default select example" required>
+                        <optgroup label="Person">
+                        <option value="1">1 Person</option>
+                        <option value="2">2 Person</option>
+                        <option value="3">3 Person</option>
+                        <option value="3">4 Person</option>
+                        <option value="more">More than 4 Person</option>
+                    </optgroup>
+                    </select>
+                    <br>
+                    <textarea name="message" id="message" placeholder="Special requirements if any...." class="form-control mb-3"></textarea>
+                    
+                    <input type="submit" value="Book Now" class="form-control" id="btn">
+
+                </form> -->
+
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <input type="submit" value="Book Now" class="form-control" id="btn">
+                </form>
+                
+                {% if form.non_field_errors %}
+                    <div class="error">{{ form.non_field_errors }}</div>
+                {% endif %}
+            </div>
+
+        </div>
+
+    </div>
+</main>
+
+
+
+{% endblock  %}

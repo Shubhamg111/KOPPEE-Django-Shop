@@ -1,0 +1,131 @@
+{% extends "main/layout.html" %}
+{% load static %}
+
+{% block maincontent %}
+
+<header id="about-header">
+    <nav class="navbar navbar-expand-lg d-flex mb-5 " id="navbar1">
+        <a class="navbar-brand ms-3" href="index.html" id="logo">KOPPEE</a>
+        <img src="https://www.icegif.com/wp-content/uploads/2023/06/icegif-1076.gif" alt="" width="60px">
+        <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <ul class="navbar-nav ms-auto d-flex me-5" id="nav-list1">
+                    <ul class="navbar-nav ms-auto d-flex me-5" id="nav-list1">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/service">Service</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/menu">Menu</a>
+                        </li>
+                        <li class="nav-item">
+                            <div class="dropdown ">
+                                <button class="btn btn-secondary dropdown-toggle m-2" type="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Pages
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/reservation">Reservation</a></li>
+                                    <li><a class="dropdown-item" href="/testimonial">Testimonial</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/contact">Contact</a>
+                        </li>
+    
+                    </ul>
+            </div>
+        </div>
+    </nav>
+
+    
+
+    <div class="d-flex justify-content-center align-items-center flex-column pb-5">
+        <h1 class="fs-1 mb-3"> SERVICES</h1>
+        <small class="mb-5">
+            <a href="/">Home / </a>
+            <a href="/menu">Menu</a>
+        </small>
+    </div>
+</header>
+
+<main class="py-5">
+    <div class="container menu" id="container-3">
+        <h3 class="text-center fs-3">MENU & PRICING</h3>
+        <h1 class="text-center fs-1">Competitive Pricing</h1>
+
+        <div class="menu-types d-flex flex-wrap justify-content-evenly">
+            <div class="hot-coffee col-lg-5 col-md-10">
+                <h2 class="fs-2 my-5">Hot Coffee</h2>
+                <div class="items">
+                    {% for item in menu.hot %}
+                      
+                   
+                    <div class="box d-flex align-items-center mb-5">
+                        <div class="img-price position-relative col-lg-3 me-5">
+                            <img src="{{item.image}}" alt="{{item.name}}" class="rounded-circle me-5 img-fluid" width="100%"
+                                height="100%">
+                            <span
+                                class="position-absolute p-3 rounded-circle bottom-50 start-100 translate-middle badge text-dark fs-5">
+                                ${{item.price}}
+                            </span>
+                        </div>
+
+
+                        <div class="img-details">
+                            <h4>{{item.name}}</h4>
+                            <p>{{item.description}}</p>
+                        </div>
+
+
+                    </div>
+                    {% endfor %}
+                    
+                </div>
+
+            </div>
+            <div class="cold-coffee col-md-8 col-lg-5">
+                <h2 class="fs-2 my-5">Cold Coffee</h2>
+
+                <div class="items">
+                    {% for item in menu.cold %}
+                      
+                  
+                    <div class="box d-flex align-items-center mb-5">
+                        <div class="img-price position-relative col-lg-3 me-5">
+                            <img src="{{item.image}}" alt="{{item.name}}" class="rounded-circle me-5 img-fluid" width="100%"
+                                height="100%">
+                            <span
+                                class="position-absolute p-3 rounded-circle bottom-50 start-100 translate-middle badge text-dark fs-5">
+                                ${{item.price}}
+                            </span>
+                        </div>
+                        <div class="img-details">
+                            <h4>{{item.name}}</h4>
+                            <p>{{item.description}}</p>
+                        </div>
+
+                    </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</main>
+
+
+{% endblock  %}

@@ -1,0 +1,137 @@
+{% extends "main/layout.html" %}
+{% load static %}
+
+{% block maincontent %}
+<header id="about-header">
+    <nav class="navbar navbar-expand-lg d-flex mb-5 " id="navbar1">
+        <a class="navbar-brand ms-3" href="/" id="logo">KOPPEE</a>
+        <img src="https://www.icegif.com/wp-content/uploads/2023/06/icegif-1076.gif" alt="" width="60px">
+        <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <ul class="navbar-nav ms-auto d-flex me-5" id="nav-list1">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/service">Service</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/menu">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <div class="dropdown ">
+                            <button class="btn btn-secondary dropdown-toggle m-2" type="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Pages
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="/reservation">Reservation</a></li>
+                                <li><a class="dropdown-item" href="/testimonial">Testimonial</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/contact">Contact</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    
+
+    <div class="d-flex justify-content-center align-items-center flex-column pb-5">
+        <h1 class="fs-1 mb-3"> ABOUT US</h1>
+        <small class="mb-5">
+            <a href="/">Home / </a>
+            <a href="/about">About Us</a>
+        </small>
+    </div>
+</header>
+
+<main class="pb-4">
+    <div class="container py-5" id="container-1">
+        <h3 class="text-center">ABOUT US</h2>
+            <h1 class="text-center mb-5">Serving Since 1950</h1>
+
+            <div
+                class=" d-lg-flex d-md-flex flex-lg-row flex-md-column justify-content-md-between align-items-md-center justify-content-lg-evenly flex-wrap mt-4 mx-5 ">
+                <div class="box col-md-8 col-lg-3 mt-5">
+                    <h2>Our Story</h1>
+                        <p class="fs-5">Eos kasd eos dolor vero vero, lorem stet diam rebum. Ipsum amet
+                            sed
+                            vero dolor sea</p>
+                        <p class=" fw-light fs-6">Takimata sed vero vero no sit sed, justo clita duo no duo amet et,
+                            nonumy
+                            kasd sed dolor
+                            eos diam lorem eirmod. Amet sit amet amet no. Est nonumy sed labore eirmod sit
+                            magna.
+                            Erat at est justo sit ut. Labor diam sed ipsum et eirmod
+                        </p>
+                        <button class="btn bg-dark text-light w-50 px-0">Learn More</button>
+                </div>
+
+                <div class="box col-lg-5 col-md-9">
+                    <img class="img-fluid" src="{% static 'images/cup.png' %}" alt="cup" height="100%" width="100%">
+                </div>
+
+                <div class="box col-lg-3 col-md-8  mt-5" id="box3">
+                    <h2>Our Vision</h2>
+                    <p class="fw-light fs-6">Invidunt lorem justo sanctus clita. Erat lorem labore ea, justo dolor
+                        lorem ipsum ut sed
+                        eos,
+                        ipsum et dolor kasd sit ea justo. Erat justo sed sed diam.
+                    </p>
+                    <p class="fs-5" id="vision"><i class="bi bi-check2 fs-4 "></i> Lorem ipsum dolor sit amet</p>
+                    <p class="fs-5" id="vision"><i class="bi bi-check2 fs-4 "></i> Lorem ipsum dolor sit amet</p>
+                    <p class="fs-5" id="vision"><i class="bi bi-check2 fs-4 "></i> Lorem ipsum dolor sit amet</p>
+
+                    <button class="btn w-50 px-0">Learn More</button>
+
+
+                </div>
+            </div>
+
+
+    </div>
+
+    <div class="teams p-1" id="container1_1">
+        <div class="top mt-3 mb-5">
+            <h2 class=" text-center">Our Teams</h2>
+        </div>
+
+        <div class="d-flex justify-content-evenly">
+            {% for  team in teams %}              
+            <div class="card col-md-3 m-2 border-0 shadow rounded text-center bg-warning-subtle">
+                <img src="{{team.image}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h3 class="card-title">{{team.name}}</h3>
+                    <p class="card-text text-secondary">{{team.position}}</p>
+                    <div class="icons d-flex justify-content-evenly">
+                        <a href="{{team.facebook}}" target="_blank"><i class="bi bi-facebook"></i></a>
+                        <a href="{{team.instagram}}" target="_blank"><i class="bi bi-instagram"></i></a>
+                        <a href="{{team.twitter}}" target="_blank"><i class="bi bi-twitter"></i></a>
+                    </div>
+
+                    
+                    
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        
+        
+    </div>
+</main>
+  
+{% endblock  %}

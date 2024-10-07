@@ -1,0 +1,92 @@
+{% extends "main/layout.html" %}
+{% load static %}
+
+{% block maincontent %}
+
+<header id="about-header">
+    <nav class="navbar navbar-expand-lg d-flex mb-5 " id="navbar1">
+        <a class="navbar-brand ms-3" href="index.html" id="logo">KOPPEE</a>
+        <img src="https://www.icegif.com/wp-content/uploads/2023/06/icegif-1076.gif" alt="" width="60px">
+        <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <ul class="navbar-nav ms-auto d-flex me-5" id="nav-list1">
+                    <ul class="navbar-nav ms-auto d-flex me-5" id="nav-list1">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/service">Service</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/menu">Menu</a>
+                        </li>
+                        <li class="nav-item">
+                            <div class="dropdown ">
+                                <button class="btn btn-secondary dropdown-toggle m-2" type="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Pages
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/reservation">Reservation</a></li>
+                                    <li><a class="dropdown-item" href="/testimonial">Testimonial</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/contact">Contact</a>
+                        </li>
+    
+                    </ul>
+            </div>
+        </div>
+    </nav>
+
+    
+
+    <div class="d-flex justify-content-center align-items-center flex-column pb-5">
+        <h1 class="fs-1 mb-3">TESTIMONIALS</h1>
+        <small class="mb-5">
+            <a href="/">Home / </a>
+            <a href="testimonial">Testimonial</a>
+        </small>
+    </div>
+
+</header>
+
+<main class="py-5">
+    <div class="container" id="container-5">
+        <h3 class="text-center fs-md-3">TESTIMONIAL</h3>
+        <h1 class="text-center fs-md-1 mb-5 ">Our Clients Say</h1>
+
+        <div class="owl-carousel owl-theme px-5">
+            {% for item in clients %}
+              
+          
+            <div class="col-lg-9">
+                <div class="d-flex col-lg-7 mb-3 " >
+                    <img src="{{item.image}}" alt="testimonial-1" class="me-3 img-fluid">
+                    <div>
+                        <h4 class="fs-4">{{item.name}}</h4>
+                        <span class="fs-6 fw-light">{{item.profession}}</span>
+                    </div>
+                </div>
+
+                <p class="fs-6 fw-light">{{item.message}}</p>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</main>
+
+
+
+{% endblock  %}
